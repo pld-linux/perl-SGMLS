@@ -1,9 +1,9 @@
 %include	/usr/lib/rpm/macros.perl
-Summary:	SGMLS perl module
-Summary(pl):	Modu³ perla SGMLS
+Summary:	SGMLS - postprocessing the output from the sgmls and nsgmls parsers
+Summary(pl):	SGMLS - przetwarzanie wyj¶cia z analizatorów sk³adni: sgmls i nsgmls
 Name:		perl-SGMLS
 Version:	1.03ii
-Release:	10
+Release:	11
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/SGMLS/SGMLSpm-%{version}.tar.gz
@@ -13,10 +13,13 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-SGMLS perl module.
+This distribution contains SGMLS.pm, a perl5 class library for parsing
+the output from James Clark's SGMLS and NSGMLS parsers.
 
 %description -l pl
-Modu³ perla SGMLS.
+Pakiet ten zawiera bibliotekê klas Perla 5 SGMLS.pm s³u¿±c± do
+przetwarzania wyj¶cia z analizatorów sk³adniowych SGMLS i NSGMLS
+Jamesa Clarka.
 
 %prep
 %setup -q -n SGMLSpm
