@@ -3,7 +3,7 @@ Summary:	SGMLS perl module
 Summary(pl):	Modu³ perla SGMLS
 Name:		perl-SGMLS
 Version:	1.03ii
-Release:	6
+Release:	7
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/SGMLS/SGMLSpm-%{version}.tar.gz
