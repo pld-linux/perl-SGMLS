@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
-Summary:	SGMLS perl module
-Summary(pl):	Modu³ perla SGMLS
+Summary:	SGMLS - postprocessing the output from the sgmls and nsgmls parsers
+#Summary(pl):	
 Name:		perl-SGMLS
 Version:	1.03ii
 Release:	10
@@ -8,31 +8,36 @@ License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/SGMLS/SGMLSpm-%{version}.tar.gz
 BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	perl >= 5.6
+BuildRequires:	perl-devel >= 5.6
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-SGMLS perl module.
+This distribution contains SGMLS.pm, a perl5 class library for parsing
+the output from James Clark's SGMLS and NSGMLS parsers.
 
-%description -l pl
-Modu³ perla SGMLS.
+# %description -l pl
+# TODO
 
 %prep
 %setup -q -n SGMLSpm
+mkdir -p lib/SGMLS
+mv Output.pm Refs.pm skel.pl lib/SGMLS
+mv SGMLS.pm lib
+mv sgmlspl.pl sgmlspl
+mv test-SGMLS.pl test.pl
+
+%build
+touch Makefile.PL
+%{__perl} -MExtUtils::MakeMaker -wle 'WriteMakefile(NAME=>"SGMLS", EXE_FILES=>["sgmlspl"])' \
+	INSTALLDIRS=vendor
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man3,%{perl_vendorlib}/SGMLS}
 
 %{__make} install \
-	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
-	PERL5DIR=$RPM_BUILD_ROOT%{perl_vendorlib} \
-	SPECDIR=$RPM_BUILD_ROOT%{perl_vendorlib}/SGMLS
-
-pod2man --section=3pm SGMLS.pm  > $RPM_BUILD_ROOT%{_mandir}/man3/SGMLS.3pm
-pod2man --section=3pm Output.pm > $RPM_BUILD_ROOT%{_mandir}/man3/SGMLS::Output.3pm
-pod2man --section=3pm Refs.pm   > $RPM_BUILD_ROOT%{_mandir}/man3/SGMLS::Refs.3pm
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
