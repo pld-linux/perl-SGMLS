@@ -26,7 +26,7 @@ Modu³ perla SGMLS.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_mandir}/man3,%{perl_sitelib}/SGMLS}
 
-make install \
+%{__make} install \
 	BINDIR=$RPM_BUILD_ROOT%{_bindir} \
 	PERL5DIR=$RPM_BUILD_ROOT%{perl_sitelib} \
 	SPECDIR=$RPM_BUILD_ROOT%{perl_sitelib}/SGMLS
