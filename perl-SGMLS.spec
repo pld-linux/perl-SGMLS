@@ -11,7 +11,7 @@ Source:		ftp://ftp.perl.org/pub/CPAN/modules/by-module/SGMLS/SGMLSpm-%{version}.
 BuildRequires:	rpm-perlprov >= 3.0.3-18
 BuildRequires:	perl >= 5.005_03-14
 %requires_eq	perl
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 SGMLS perl module.
@@ -34,7 +34,6 @@ make install \
 pod2man SGMLS.pm  > $RPM_BUILD_ROOT%{_mandir}/man3/SGMLS.3pm
 pod2man Output.pm > $RPM_BUILD_ROOT%{_mandir}/man3/SGMLS::Output.3pm
 pod2man Refs.pm   > $RPM_BUILD_ROOT%{_mandir}/man3/SGMLS::Refs.3pm
-
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man3/* \
         ChangeLog README BUGS TODO
