@@ -1,10 +1,14 @@
+#
+# Conditional build:
+%bcond_with	tests	# perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 Summary:	SGMLS - postprocessing the output from the SGMLS and NSGMLS parsers
 Summary(pl):	SGMLS - przetwarzanie wyj¶cia z analizatorów sk³adni: SGMLS i NSGMLS
 Name:		perl-SGMLS
 Version:	1.03ii
 Release:	12
-License:	GPL
+License:	GPL v2
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/SGMLS/SGMLSpm-%{version}.tar.gz
 # Source0-md5:	5bcb197fd42e67d51c739b1414d514a7
@@ -36,6 +40,8 @@ touch Makefile.PL
 %{__perl} -MExtUtils::MakeMaker -wle 'WriteMakefile(NAME=>"SGMLS", EXE_FILES=>["sgmlspl"])' \
 	INSTALLDIRS=vendor
 %{__make}
+
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
