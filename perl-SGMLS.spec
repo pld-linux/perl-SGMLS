@@ -7,7 +7,7 @@ Summary:	SGMLS - postprocessing the output from the SGMLS and NSGMLS parsers
 Summary(pl):	SGMLS - przetwarzanie wyj¶cia z analizatorów sk³adni: SGMLS i NSGMLS
 Name:		perl-SGMLS
 Version:	1.03ii
-Release:	12
+Release:	13
 License:	GPL v2
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/SGMLS/SGMLSpm-%{version}.tar.gz
