@@ -4,7 +4,7 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	SGMLS - postprocessing the output from the SGMLS and NSGMLS parsers
-Summary(pl):	SGMLS - przetwarzanie wyj∂cia z analizatorÛw sk≥adni: SGMLS i NSGMLS
+Summary(pl.UTF-8):   SGMLS - przetwarzanie wyj≈õcia z analizator√≥w sk≈Çadni: SGMLS i NSGMLS
 Name:		perl-SGMLS
 Version:	1.03ii
 Release:	14
@@ -22,9 +22,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This distribution contains SGMLS.pm, a perl5 class library for parsing
 the output from James Clark's SGMLS and NSGMLS parsers.
 
-%description -l pl
-Pakiet ten zawiera bibliotekÍ klas Perla 5 SGMLS.pm s≥uø±c± do
-przetwarzania wyj∂cia z analizatorÛw sk≥adniowych SGMLS i NSGMLS
+%description -l pl.UTF-8
+Pakiet ten zawiera bibliotekƒô klas Perla 5 SGMLS.pm s≈Çu≈ºƒÖcƒÖ do
+przetwarzania wyj≈õcia z analizator√≥w sk≈Çadniowych SGMLS i NSGMLS
 Jamesa Clarka.
 
 %prep
