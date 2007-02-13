@@ -4,7 +4,7 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	SGMLS - postprocessing the output from the SGMLS and NSGMLS parsers
-Summary(pl.UTF-8):   SGMLS - przetwarzanie wyjścia z analizatorów składni: SGMLS i NSGMLS
+Summary(pl.UTF-8):	SGMLS - przetwarzanie wyjścia z analizatorów składni: SGMLS i NSGMLS
 Name:		perl-SGMLS
 Version:	1.03ii
 Release:	14
