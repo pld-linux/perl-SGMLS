@@ -1,7 +1,8 @@
 #
 # Conditional build:
 %bcond_with	tests	# perform "make test"
-#
+
+%define		pdir	SGMLS
 %include	/usr/lib/rpm/macros.perl
 Summary:	SGMLS - postprocessing the output from the SGMLS and NSGMLS parsers
 Summary(pl.UTF-8):	SGMLS - przetwarzanie wyjścia z analizatorów składni: SGMLS i NSGMLS
@@ -12,8 +13,9 @@ License:	GPL v2
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/SGMLS/SGMLSpm-%{version}.tar.gz
 # Source0-md5:	5bcb197fd42e67d51c739b1414d514a7
-BuildRequires:	rpm-perlprov >= 4.1-13
+URL:		http://search.cpan.org/dist/SGMLS-/
 BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	rpm-perlprov >= 4.1-13
 Obsoletes:	perl-SGMLSpm
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
