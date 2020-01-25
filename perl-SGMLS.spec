@@ -3,7 +3,6 @@
 %bcond_with	tests	# perform "make test"
 
 %define		pdir	SGMLS
-%include	/usr/lib/rpm/macros.perl
 Summary:	SGMLS - postprocessing the output from the SGMLS and NSGMLS parsers
 Summary(pl.UTF-8):	SGMLS - przetwarzanie wyjścia z analizatorów składni: SGMLS i NSGMLS
 Name:		perl-SGMLS
